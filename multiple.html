@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Import Multiple</title>
+</head>
+
+<body>
+  <script type="module">
+
+    import { name, sum, Person } from "./scripts/multiple.mjs";
+    import { name as nama, sum as jumlah, Person as Orang } from "./scripts/multiple2.mjs"; // fungsi nya membuat variabel baru tanpa mengganti nama variabel aslinya, supaya tidak bentrok dengan variabel yang sama di mjs lain
+    // lakukan alias atau as di import, jangan di export karena masih bisa bentrok
+    console.info(name);
+
+    console.info(sum(1, 2));
+
+    const orang = new Person("Yandra");
+    orang.aku("Muslim");
+
+  </script>
+</body>
+
+</html>
