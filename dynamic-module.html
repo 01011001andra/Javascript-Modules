@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Module</title>
+</head>
+<input type="text" id="name">
+<input type="button" value="Say" id="sayButton">
+
+<body>
+  <script type="module">
+    document.getElementById("sayButton").onclick = function () {
+      import("./scripts/dynamic-module-alert.mjs").then(module => {
+        const name = document.getElementById("name").value;
+        module.sayName(name);
+      })
+    }
+
+
+  </script>
+</body>
+
+</html>
